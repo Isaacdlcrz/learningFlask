@@ -1,11 +1,11 @@
 .env
 env/
-_pycache_/
+__pycache__/
 .vscode/
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
-_pycache_/*
+__pycache__/*
 .vscode/*
 dotenv

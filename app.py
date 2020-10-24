@@ -1,10 +1,9 @@
-from flask import Flask, jsonify, request
 import json
 from dotenv import load_dotenv
-# from model.model import db, ma 
-from user.model import User, User_schema
+from sharePlay import create_app
+from sharePlay.user.model import User
 
-app = Flask(__name__)
+app = create_app()
 
 try:
     load_dotenv()
