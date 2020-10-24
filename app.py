@@ -1,7 +1,7 @@
 import json
 from dotenv import load_dotenv
 from sharePlay import create_app
-from sharePlay.user.model import User
+from sharePlay.user.model import User, User_schema
 
 app = create_app()
 
@@ -16,17 +16,14 @@ personas_feas = ['Isaac', 'Hector', 'Hectorx2']
 def hello_world():
     return 'Hello world'
 
-@app.route('/getUglyPerson/<index>')
-def getUglyPerson(index):
+@app.route('/getUglyPerson')
+def getUglyPerson():
     try:
-        res = {
-            'ugliest_person': personas_feas[int(index)]
-        }
-
-        return jsonify(res)
+        res = User.query.all()
+        print(res)
+        return jsonify(User_schema(many = True).dump(res))
     except Exception as err:
-        # print(err)
-        pass
+        print(err)
 
 @app.route('/hola', methods=['POST'])
 def holaPost():
