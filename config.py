@@ -7,7 +7,7 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = "mysql+pymsql://root:Di322$25@127.0.0.1"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:Di322$25@127.0.0.1:3306/sharePlay"
 
 class ProductionConfig(Config):
     DEBUG = False
